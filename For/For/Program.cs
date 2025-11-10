@@ -73,3 +73,34 @@ if (number > 0 && number <= lemmikloomad.Length)
     string lemmik = lemmikloomad[number -1];
     Console.WriteLine($"Sinu lemmikloom on {lemmik}");
 }
+
+// 4. foreach
+int[] arvuLoend = { 3, 89, 123412, 7, 67 }; //massiiv mida foreach tsükkel kasutab, või töötleb mingil kujul.
+foreach (var arvInLoend in arvuLoend) // kaitstud sõna foreach alustab foreach tsükli. Pärast mida on sulud, mille vahel tekitatakse
+                                      // ajutine muutuja andmetüübiga "var" töödeldava andmekogumi üksikelemendi jaoks. süntaksis olev
+                                      // kaitstud sõna "in" väljendab et tsükkel käib selle loendi elementide kohta, ning var "arvInLoend"
+                                      // muutuja hoiab endas just peale sõna "in" oleva andmekogumi elementi. Tsüklil ei ole nähtavat
+                                      // tsüklimuutujat ega tingimust, tsükkel toimib niikaua kuni elemente jätkub ehk tsükli töö käib
+                                      // iga üksiku elemendi kohta andmekogumis. Tsüklit ei ole vaja tsüklimuutujasse, kuna talle on
+                                      // sisse ehitatud vaikimisi elemendi järjestuse jälgimine. Niipalju kui andmeid on, ongi see,
+                                      // mitu korda tsükkel käivitatakse.
+                                      // {} koodiplokk kus tehakse mingi tegevus
+                                      // antud juhul kuvatakse välja ajutine muutuja, mille sees on loendi element.
+// 2. loend:
+// List<T> -> Loend on komposiitandmetüüp, mille sees saab olla mitmeid samat tüüpi liht ja komposiitandmeid. Loend-tüüpi andmeid tähistatakse
+//            Täiendava andmetüübikirjeldusega "List" mille järel noolsulgudesse asetatakse mis tüüpi andmed loendis on.
+//            Loendi tekitamisel, erinevalt massiivist, ei pea ütlema kui pikk loend on. Loendisse saab dünaamiliselt elemente juurde
+//            Lisada, ehk tema pikkus ei ole fikseeritud.
+//            Sarnaselt massiiviga, saab loend omada endas, teisi loendeid.
+//
+// Esimene tekitusviis:
+List<int> arvuNimekiri = new List<int>(); //Andmetüübi kirjeldus "List<>" näitab et tegu on loendiga, List noolsulgude vahel on loendis
+                                          //olevate andmete andmetüüp. muutuja nimeks on "arvuNimekiri". Omistame sellesse muutujasse
+                                          //kaitstud sõna "new" abil uue tühja täisarvuloendi sätestusega "List<int>()".
+// Teine tekitusviis:
+List<int> arvuNimekiri2 = new List<int>() {1,2,3}; //teine loendi tekitusviis, muutuja instantseerimine võrdusmärgi ees on sama nagu
+                                                   //esimesel, juurde tuleb ainult võrdusmärgi taga olevate sätestustele loogelised
+                                                   //sulud koos juba sinna asetatud elementidega. Enam ei ole tegu tühja nimekirjaga,
+                                                   //vaid loendiga kus on kolm elementi.
+                                                   // Kolmas tekitusviis:
+List<int> arvuNimekiri
